@@ -2,7 +2,7 @@
 
 # BIG BITE
 
-Big Bite.com is meal kit service that delivers 2–4 recipes to your door each week, along with all the preportioned ingredients you need to make the meals
+Big Bite.com is meal kit service that delivers 2–4 recipes to your door each week, along with all the preportioned ingredients you need to make the meals.
 
 This website is inspired by "Blue Apron".
 
