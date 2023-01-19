@@ -1,16 +1,5 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-//  export default function Navbar(){
-  //     return <div>
-  //         <Link to="/">
-  //             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Blue_Apron_logo.svg/132px-Blue_Apron_logo.svg.png?20220725161146"
-  //             width="80px" alt=""/>
-  //         </Link>
-  //         <Link to="/on-the-menu">On the menu</Link>
-  //         <Link to="/login">Login</Link>
-  //     </div>
-  //  }
-  import pic from "../images/bigBite.png";
+  import pic from "../images/bigBite(1).png";
+  // import pic from "../images/bigBite.png";
 
   import {
       Box,
@@ -20,29 +9,22 @@
       Button,
       Stack,
       Collapse,
-      Icon,
       Link,
       Popover,
       PopoverTrigger,
-      PopoverContent,
       useColorModeValue,
       useBreakpointValue,
       useDisclosure,
+      useConst,
     } from '@chakra-ui/react';
     import {
       HamburgerIcon,
       CloseIcon,
-      ChevronDownIcon,
-      ChevronRightIcon,
     } from '@chakra-ui/icons';
+  import {AuthContext} from '../context/AuthContext'
+import { useContext,useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
-  // const  NavItem ={
-  //   label: string,
-  //   subLabel?: string,
-  //   href?: string,
-  //   children?: Array<NavItem>
-  // }
-  
   const NAV_ITEMS = [
     {
       label: 'ON THE MENU',
@@ -66,10 +48,15 @@
     },
   ];
   
-  // import {NavLink} from '@chakra-ui/react'
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-  
+    const {login,logOut,isAuth}=useContext(AuthContext);
+    console.log("onNavbar",isAuth);
+    useEffect(()=>{
+      if(isAuth){
+        return <Navigate to="/"/>
+      }
+    },[])
     return (
       <Box>
         <Flex
@@ -102,7 +89,7 @@
                 fontFamily={'heading'}
                 color={useColorModeValue('gray.800', 'white')}>
                 <img src={pic} alt="logo" 
-                style={{width:'65px',height:'60px',padding:'0%',marginLeft:'2rem',border:'0px solid'}}/>
+                style={{width:'90px',height:'70px',padding:'0%',marginLeft:'3rem',border:'0px solid'}}/>
               </Text>
             </Link>
   
@@ -116,6 +103,9 @@
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+              {isAuth?(<>
+              {/* <Navigate to="/"/>; */}
+              <Button onClick={logOut}>LogOut</Button></>):
             <Button
               as={'a'}
               fontSize={'sm'}
@@ -124,15 +114,16 @@
               href={'/login'}>
               Log In
             </Button>
-              <Link href={'/pricing'}>
+              }
+              <Link href={'/signup'}>
                 <Button
                   display={{ base: 'none', md: 'inline-flex' }}
                   fontSize={'sm'}
                   fontWeight={600}
                   color={'white'}
-                  bg={'orange.400'}
+                  bg={'orange.500'}
                   _hover={{
-                    bg: 'orange.300',
+                    bg: 'orange.400',
                   }}>
                   Sign Up
                 </Button>

@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "test1",
+      "email": "test1@gmail.com",
+      "password": "12345"
+    },
+    {
+      "name": "test2",
+      "email": "test2@gmail.com",
+      "password": "test@2",
+      "id": 2
+    },
+    {
+      "name": "test3",
+      "email": "test3@gmail.com",
+      "password": "test@3",
+      "id": 3
+    },
+    {
+      "name": "test4",
+      "email": "test4@gmail.com",
+      "password": "test@4",
+      "id": 4
+    },
+    {
+      "name": "test5",
+      "email": "test5@gmail.com",
+      "password": "test@5",
+      "id": 5
+    },
+    {
+      "name": "test6",
+      "email": "test6@gmail.com",
+      "password": "test@6",
+      "id": 6
+    }
+  ]
+}
