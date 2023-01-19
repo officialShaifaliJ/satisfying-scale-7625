@@ -15,7 +15,6 @@
       useColorModeValue,
       useBreakpointValue,
       useDisclosure,
-      useConst,
     } from '@chakra-ui/react';
     import {
       HamburgerIcon,
@@ -50,7 +49,7 @@ import { Navigate } from "react-router-dom";
   
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-    const {login,logOut,isAuth}=useContext(AuthContext);
+    const {logOut,isAuth}=useContext(AuthContext);
     console.log("onNavbar",isAuth);
     useEffect(()=>{
       if(isAuth){

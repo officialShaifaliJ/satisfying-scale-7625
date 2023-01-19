@@ -11,12 +11,13 @@ const login = (token,isAuth) =>{
     setToken(token);
     console.log(token,isAuth)
 }
+
 const logOut =()=>{
     setAuth(false);
     setToken(null);
 }
 
-return <AuthContext.Provider value={{setAuth,isAuth,logOut,token,login}}>
+return <AuthContext.Provider value={{setAuth,isAuth,logOut,token,setToken,login}}>
     {children}
 </AuthContext.Provider>
 

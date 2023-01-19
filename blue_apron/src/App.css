@@ -52,3 +52,49 @@ button{
   margin: auto;
   padding: 0.6rem;
 }
+@media all and (min-width: 930px) and (max-width: 1061px) {
+  .absoluteDiv{
+    width: 36%;
+    /* border: 1px solid black;  */
+    margin-top: 8rem;
+  }
+  .absoluteDiv>h1{
+    font-size: 42px;
+  }
+  .getCookiBtn{
+    margin-top:0.7rem;
+    padding: 0.6rem 2rem 0.6rem 2rem;
+    font-size: 16px;
+  }
+  }
+@media all and (min-width: 7px) and (max-width: 931px) {
+  .absoluteDiv{
+    width: 36%;
+    /* border: 1px solid black;  */
+    margin-top: 6rem;
+  }
+  .absoluteDiv>h1{
+    font-size: 36px;
+  }
+  .getCookiBtn{
+    margin-top:0.7rem;
+    padding: 0.6rem 2rem 0.6rem 2rem;
+    font-size: 15px;
+  }
+  }
+@media all and (min-width: 550px) and (max-width: 768px) {
+      .absoluteDiv{
+        width: 50%;
+        /* border: 1px solid black;  */
+        margin:0.3rem;
+        margin-top: 3rem;
+      }
+      .absoluteDiv>h1{
+        font-size: 30px;
+      }
+      .getCookiBtn{
+        margin-top:0.7rem;
+        padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+        font-size: 15px;
+      }
+  }
