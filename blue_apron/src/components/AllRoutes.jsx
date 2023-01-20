@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import OnTheMenu from "../pages/On_the_menu";
 import SignupCard from "../pages/Signup";
 import { AuthContext } from "../context/AuthContext";
+import Pricing from "../pages/Pricing";
 export default function AllRoutes(){
 const {isAuth,logOut}=useContext(AuthContext);
  return <Routes>
@@ -13,5 +14,6 @@ const {isAuth,logOut}=useContext(AuthContext);
     <Route path="/login" element={isAuth?(null):(<Login/>)}/>
     <Route path="/on_the_menu" element={<OnTheMenu/>}/>
     <Route path="/signup" element={<SignupCard/>}/>
+    <Route path="/pricing" element={<Pricing/>}/>
  </Routes>
 }

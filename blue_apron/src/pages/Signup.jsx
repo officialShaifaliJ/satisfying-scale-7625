@@ -5,7 +5,6 @@ import {
     FormLabel,
     Input,
     InputGroup,
-    HStack,
     InputRightElement,
     Stack,
     Button,
@@ -35,13 +34,13 @@ import {
 
           console.log(userData);
           
-          if(name==""||email==""||password==""){
+          if(name===""||email===""||password===""){
               alert('Please fill All Details 🙏');
               return 
             }else{
                 checkUserData.data.forEach((el)=>{
                     console.log(el.email)
-                    if(el.email==email||el.name==name){
+                    if(el.email===email||el.name===name){
                         userIsHere=1;
                     }
                 })

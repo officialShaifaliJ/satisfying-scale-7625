@@ -15,14 +15,15 @@ import {
 
 import axios from 'axios';
 import { useContext } from 'react';
-import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
   export default function SimpleCard() {
+    const nav=useNavigate();
     const [email,setEmail]=useState("test2@gmail.com");
     const [password,setPassword]=useState("test@2");
-    let {login,isAuth,setAuth} = useContext(AuthContext);
+    let {login,isAuth,setAuth,token,setToken} = useContext(AuthContext);
 
     let userExist =0;
     const handleLogin = async(e) =>{
@@ -32,22 +33,24 @@ import { AuthContext } from '../context/AuthContext';
         console.log(checkIsUser.data);
         checkIsUser.data.map((el)=>{
             if(el.email===email&&el.password===password){
+                let id=el.id;
                 userExist=1;
                 isAuth=true;
+                token=id;
                 setAuth(true);
-                login(el.id,isAuth);
+                setToken(token)
+                login(token,isAuth);
                 console.log(isAuth)
             }
         })
         if(userExist===1){
             alert("🎉🎊Successfully Logged In 🤗🥳");
-            //  <Navigate to="/"/>
+            nav("/");
+            console.log("loginSuccessfull",token,isAuth)
         }else{
             alert("Invalid Credentials❌")
         }
-        if(isAuth){return <Navigate to="/"/>}
     }
-
 
     return (
       <Flex
