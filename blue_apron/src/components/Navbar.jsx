@@ -88,7 +88,7 @@ import { Navigate } from "react-router-dom";
                 fontFamily={'heading'}
                 color={useColorModeValue('gray.800', 'white')}>
                 <img src={pic} alt="logo" 
-                style={{width:'90px',height:'70px',padding:'0%',marginLeft:'3rem',border:'0px solid'}}/>
+                style={{width:'90px',height:'70px',padding:'0%',marginLeft:'0.7rem',border:'0px solid'}}/>
               </Text>
             </Link>
   

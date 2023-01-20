@@ -1,6 +1,7 @@
-/* .App {
+.App {
    text-align: center; 
-} */
+   align-items: center;
+}
 .meal1{
   display: flex;
 }
@@ -52,7 +53,203 @@ button{
   margin: auto;
   padding: 0.6rem;
 }
-@media all and (min-width: 930px) and (max-width: 1061px) {
+.steps{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:3rem;
+  padding: 1.7rem 5.2rem;
+  text-align: center;
+}
+.steps>div>h4{
+  font-size:16px;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+p{
+  font-size: 15px;
+  padding: 0rem 3rem;
+}
+.GetStarted{
+  text-align: center;
+  padding: 2rem 0rem;
+}
+.chooseDiv{
+  margin: auto;
+  margin-top: 3rem;
+
+}
+.chooseDiv>h1{
+  font-weight: 500;
+  font-size: 40px;
+  color: rgb(10, 10, 114);
+  letter-spacing:0.3rem;
+}
+.chooseDiv>p{
+  font-weight: bold;
+  font-size: 50px;
+  color: rgb(14, 150, 204);
+  font-family: 'Times New Roman', Times, serif;
+}
+.chooseDiv>div{
+  display: grid;
+  /* border: 1px solid; */
+  grid-template-columns: repeat(5,1fr);
+  justify-content: center;
+  gap:1rem;
+  padding:1rem 1rem 1rem 2rem ;
+}
+.chooseDiv>div>img{
+    align-items: center;
+    /* border: 1px solid; */
+  }
+.browserMenuBtn{
+  border: 2px solid rgb(7, 7, 185);
+  color: rgb(7, 7, 185);
+  padding: 0.7rem 1.7rem 0.7rem 1.7rem;
+  border-radius: 25px;
+  font-weight: 500;
+}
+.celebratingDiv{
+  margin-top: 3rem;
+}
+.timeOutCelebrate{
+  position: absolute;
+  /* border: 1px solid white; */
+  margin:8rem 0rem 0rem 22rem;
+}
+.timeOutCelebrate>img{
+  /* margin: 50%; */
+  align-items: center;
+}
+.GetStarted2{
+  text-align: center;
+  padding: 2rem 0rem;
+  position: absolute;
+  border: 1px solid white;
+  background-color: white;
+  margin:5rem 30rem;
+}
+.GetStarted2>p{
+  font-size:40px;
+  color: darkblue;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+.inputBoxParent{
+  background-color: rgb(243, 243, 243);
+  padding:3rem;
+}
+.inputBoxParent>input{
+  border: 1px solid grey;
+  padding: 0.3rem 5rem 0.3rem 2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.inputBoxParent>p{
+  letter-spacing: 0.2rem;
+  margin: 2rem;
+  font-size: 15px;
+  font-weight: 500;
+}
+.mainFooter{
+  font-size: 10px;
+  padding: 2rem;
+  background-color: rgb(7, 7, 109);
+}
+.mainFooter>div{
+  padding: 0.5rem;
+}
+.footer{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  color:#358ADE;
+  background-color: rgb(7, 7, 109);
+  padding: 1.5rem;
+}
+.mainFooter>div>p{
+  color: white;
+  background-color: rgb(7, 7, 109);
+  padding: 1rem;
+}
+.footer>div>p{
+  padding: 0.2rem;
+}
+.personalize>h1{
+  /* margin: 1rem; */
+font-size:40px;
+font-weight: 500;
+padding: 1rem;
+font-family: 'Times New Roman', Times, serif;
+}
+.personalize>p{
+  font-size: 17px;
+}
+.pricingSteps{
+  background-color: white;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  width: 80%;
+  /* border: 1px solid ; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:2rem;
+}
+.pricingSteps>div{
+  margin: auto;
+  /* border: 1px solid purple; */
+  padding: 0.5rem;
+}
+.mainBillingDiv{
+  background-color: rgba(244, 244, 248, 0.699);
+}
+.pricingSteps>div>img{
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.pricingSteps>div>img:hover{
+  border: 3px solid rgb(5, 5, 182);
+}
+.pricingSteps>div>h1{
+  font-size: 30px;
+}
+.plan{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  font-size: 20px;
+}
+.plan>div>button{
+  border: 2px solid darkblue;
+  font-size: 20px;
+  color: darkblue;
+  padding: 0.2rem 0.6rem;
+  font-weight: 500;
+}
+.plan>div>button:focus{
+  background-color: darkblue;
+  color:white;
+}
+.serving{
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+  font-size: 20px;
+}
+.serving>div>button{
+  border: 2px solid darkblue;
+  font-size: 20px;
+  color: darkblue;
+  padding: 0.2rem 0.6rem;
+  font-weight: 500;
+}
+.serving>div>button:focus{
+  background-color: darkblue;
+  color:white;
+}
+@media all and (min-width: 800px) and (max-width: 1075px) {
   .absoluteDiv{
     width: 36%;
     /* border: 1px solid black;  */
@@ -66,8 +263,98 @@ button{
     padding: 0.6rem 2rem 0.6rem 2rem;
     font-size: 16px;
   }
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 1.7rem 0.5rem;
+    gap: 0.5rem;
   }
-@media all and (min-width: 7px) and (max-width: 931px) {
+  .steps>div>h4{
+    font-size:15px;
+    font-weight: 500;
+    padding: 1rem 0rem;
+  }
+  .steps>div>p{
+    padding: 0%;
+  }
+  .steps>div{
+    margin: auto;
+    font-size: 14px;
+  }
+  .millionViews{
+    width:100%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    /* border: 1px solid; */
+  }
+  .millionViews>h1{
+    font-weight: bold;
+    font-size: 45px;
+  }
+  .millionViews>p{
+    /* border: 1px solid; */
+    width:60%;
+    font-size: 19px;
+    margin: auto;
+    padding: 0.6rem;
+  }
+  .chooseDiv{
+    margin: auto;
+    margin-top: 2rem;
+  }
+  .chooseDiv>h1{
+    font-weight: 500;
+    font-size: 40px;
+    color: rgb(10, 10, 114);
+    letter-spacing:0.3rem;
+  }
+  .chooseDiv>p{
+    font-weight: bold;
+    font-size: 50px;
+    color: rgb(14, 150, 204);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .chooseDiv>div{
+    display: flex;
+    justify-content: center;
+    /* scroll-behavior: smooth; */
+    margin-left: 2rem;
+    overflow: scroll;
+    gap:1rem;
+    padding:0rem ;
+  }
+    .browserMenuBtn{
+      margin-top: 2rem;
+    border: 2px solid rgb(7, 7, 185);
+    color: rgb(7, 7, 185);
+    padding: 0.7rem 1.7rem 0.7rem 1.7rem;
+    border-radius: 25px;
+    font-weight: 500;
+  }
+  .timeOutCelebrate{
+    position: absolute;
+    margin:4rem 12rem;
+  }
+  .timeOutCelebrate>img{
+    align-items: center;
+  }
+  .GetStarted2{
+    text-align: center;
+    padding: 2rem 0rem;
+    position: absolute;
+    border: 1px solid white;
+    background-color: white;
+    margin:2rem 0rem 2rem 20rem;
+  }
+  .GetStarted2>p{
+    font-size:30px;
+    color: darkblue;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  }
+@media all and (min-width: 700px) and (max-width: 800px) {
   .absoluteDiv{
     width: 36%;
     /* border: 1px solid black;  */
@@ -81,20 +368,186 @@ button{
     padding: 0.6rem 2rem 0.6rem 2rem;
     font-size: 15px;
   }
+  .steps{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    padding: 1.7rem 0.2rem;
   }
-@media all and (min-width: 550px) and (max-width: 768px) {
+  .steps>div{
+    margin: auto;
+  }
+  .millionViews{
+    width:100%;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    /* border: 1px solid; */
+  }
+  .millionViews>h1{
+    font-weight: bold;
+    font-size: 45px;
+  }
+  .millionViews>p{
+    /* border: 1px solid; */
+    width:60%;
+    font-size: 19px;
+    margin: auto;
+    padding: 0.6rem;
+  }
+  .chooseDiv{
+    margin: auto;
+    margin-top: 1 rem;
+  }
+  .chooseDiv>h1{
+    font-weight: 500;
+    font-size: 30px;
+    color: rgb(10, 10, 114);
+    letter-spacing:0.3rem;
+  }
+  .chooseDiv>p{
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(14, 150, 204);
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .chooseDiv>div{
+    display: flex;
+    justify-content: center;
+    /* scroll-behavior: smooth; */
+    margin-left: 2rem;
+    overflow: scroll;
+    gap:1rem;
+    padding:0rem ;
+  }
+    .browserMenuBtn{
+      margin-top: 2rem;
+    border: 2px solid rgb(7, 7, 185);
+    color: rgb(7, 7, 185);
+    padding: 0.7rem 1.7rem 0.7rem 1.7rem;
+    border-radius: 25px;
+    font-weight: 500;
+  }
+  .timeOutCelebrate{
+    position: absolute;
+    margin:2rem 8rem;
+  }
+  .timeOutCelebrate>img{
+    align-items: center;
+  }
+  .GetStarted2{
+    text-align: center;
+    padding: 2rem 0rem;
+    position: absolute;
+    border: 1px solid white;
+    background-color: white;
+    margin:1rem 0rem 2rem 17rem;
+  }
+  .GetStarted2>p{
+    font-size:30px;
+    color: darkblue;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  }
+@media all and (min-width: 400px) and (max-width: 700px) {
       .absoluteDiv{
         width: 50%;
         /* border: 1px solid black;  */
         margin:0.3rem;
-        margin-top: 3rem;
+        margin-top: 0.3rem;
       }
       .absoluteDiv>h1{
-        font-size: 30px;
+        font-size: 25px;
       }
       .getCookiBtn{
         margin-top:0.7rem;
         padding: 0.5rem 1.5rem 0.5rem 1.5rem;
         font-size: 15px;
       }
+      .steps{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        padding: 1.7rem 0rem;
+      }
+      .steps>div{
+        margin: auto;
+      }
+      .millionViews{
+        width:100%;
+        margin: auto;
+        margin-top: 2rem;
+        text-align: center;
+        /* border: 1px solid; */
+      }
+      .millionViews>h1{
+        font-weight: bold;
+        font-size: 35px;
+      }
+      .millionViews>p{
+        /* border: 1px solid; */
+        width:60%;
+        font-size: 19px;
+        margin: auto;
+        padding: 0.3rem;
+      }
+      .chooseDiv{
+        margin: auto;
+        margin-bottom: 2rem;
+      }
+      .chooseDiv>h1{
+        font-size: 25px;
+      }
+      .chooseDiv>p{
+        font-size: 30px;
+      }
+      .chooseDiv>div{
+        display: flex;
+        justify-content: center;
+        /* scroll-behavior: smooth; */
+        margin-left: 2rem;
+        overflow: scroll;
+        gap:1rem;
+        padding:0rem ;
+      }
+      .timeOutCelebrate{
+        position: absolute;
+        margin:1rem 5rem;
+      }
+      .timeOutCelebrate>img{
+        width: 90%;
+        align-items: center;
+      }
+      .GetStarted2{
+        text-align: center;
+        padding: 0.2rem 0.3rem;
+        position: absolute;
+        border: 1px solid white;
+        background-color: white;
+        margin:1rem 0rem 2rem 7rem;
+      }
+      .GetStarted2>p{
+        font-size:15px;
+        color: darkblue;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .GetStarted2>h5{
+        font-size: 13px;
+      }
+      .inputBoxParent>p{
+        letter-spacing: 0rem;
+        margin: 2rem;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .footer{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:1rem;
+        color:#358ADE;
+        background-color: rgb(7, 7, 109);
+        padding: 1.5rem;
+      }
   }
+
+
