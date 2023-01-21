@@ -45,7 +45,7 @@ import { AuthContext } from '../context/AuthContext';
         })
         if(userExist===1){
             alert("🎉🎊Successfully Logged In 🤗🥳");
-            nav("/");
+            nav("/pricing");
             console.log("loginSuccessfull",token,isAuth)
         }else{
             alert("Invalid Credentials❌")
@@ -97,7 +97,7 @@ import { AuthContext } from '../context/AuthContext';
                 </Button>
                 <Text align={'center'}>
                     Don't have an account ?  
-                    <Link href="/signup" color={'blue.400'}>
+                    <Link onClick={()=>nav("/signup")} color={'blue.400'}>
                     Sign Up
                     </Link>
                 </Text>

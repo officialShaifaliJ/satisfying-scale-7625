@@ -1,11 +1,11 @@
 import React,{useState} from 'react';
 
-export const AuthContext = React.createContext();
+export const AuthContext = React.createContext(false);
 
 export default function AuthContextProvider ({children}){
-const [isAuth,setAuth]=useState(false);
+const [isAuth,setAuth]=useState(true);
 const [token,setToken]=useState(null);
-
+const [ischeckout,setCheckout]=useState(false);
 const login = (token,isAuth) =>{
     setAuth(isAuth);
     setToken(token);
@@ -17,7 +17,7 @@ const logOut =()=>{
     setToken(null);
 }
 
-return <AuthContext.Provider value={{setAuth,isAuth,logOut,token,setToken,login}}>
+return <AuthContext.Provider value={{setAuth,isAuth,ischeckout,setCheckout,logOut,token,setToken,login}}>
     {children}
 </AuthContext.Provider>
 
