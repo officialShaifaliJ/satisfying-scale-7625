@@ -249,7 +249,142 @@ font-family: 'Times New Roman', Times, serif;
   background-color: darkblue;
   color:white;
 }
+.orderDiv{
+  /* border: 1px solid; */
+  background-color: rgba(244, 244, 248, 0.699);
+  border-radius: 10px;
+  margin: 1rem;
+  padding: 1rem;
+}
+.orderDiv>h1{
+font-size: 18px;
+font-weight: 500;
+}
+.orderDiv>div{
+  display: flex;
+  justify-content: space-between;
+font-weight: 500;
+}
+.orderDiv>button{
+  border: 2px solid darkblue;
+  padding: 0.4rem;
+  border-radius: 15px;
+  margin: 1rem;
+}
+.orderDiv>p{
+  font-size: 14px;
+}
+.deliveryForm{
+  /* border: 1px solid black; */
+}
+.deliveryForm>h1{
+  color: darkblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+.deliveryForm>form{
+  border: 1px solid grey;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.deliveryForm>form>h2{
+font-size: 30px;
+font-weight: bold;
+font-family: 'Times New Roman', Times, serif;
+}
+.deliveryForm>form>div{
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 2px;
+  /* border: 1px solid; */
+}
+.submit{
+  border: 1px solid darkblue;
+  background-color: darkblue;
+  color: white;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 1.6rem;
+  padding: 0.5rem
+}
+.deliveryForm>form>div>label{
+  font-size: 14px;
+  margin: 0.7rem;
+}
+.deliveryForm>form>div>label>input{
+  border: 1px solid grey;
+  padding: 0.4rem 3rem 0.4rem 0.4rem;
+  border-radius: 5px;
+  margin: 0rem 1rem;
+}
+.deliveryForm>form>div>label>select{
+  border: 1px solid grey;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin: 0rem 1rem;
+}
+.checkoutMainDiv{
+  /* border: 1px solid firebrick; */
+  display: grid;
+  /* width: 70%; */
+  grid-template-columns: repeat(2,1fr);
+  justify-content: space-evenly;
+  gap: 5rem;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+.orderSummary{
+  border:1px solid grey;
+  padding: 0%;
+  border-radius: 10px;
+  background-color: rgba(243, 241, 241, 0.521);
+}
+.orderSummary>h1{
+  font-size: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 01rem;
+}
+.orderSummary>div>h1{
+  font-size: 19px;
+  font-weight: 500;
+}
+.orderSummary>div>p{
+font-weight: 500;
+}
+.orderSummary>div{
+  display: flex;
+  /* border: 1px solid; */
+  padding:0.4rem;
+  margin:0.8rem;
+  justify-content: space-between;
+}
 @media all and (min-width: 800px) and (max-width: 1075px) {
+  .checkoutMainDiv{
+    border: 1px solid firebrick;
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+  }
+  .pricingSteps{
+    background-color: white;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    width: 80%;
+    /* border: 1px solid ; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:2rem;
+  }
   .absoluteDiv{
     width: 36%;
     /* border: 1px solid black;  */
@@ -360,6 +495,24 @@ font-family: 'Times New Roman', Times, serif;
     /* border: 1px solid black;  */
     margin-top: 6rem;
   }
+  .checkoutMainDiv{
+    border: 1px solid firebrick;
+    display: flex;
+    margin: 1rem;
+    flex-direction: column;
+  }
+  .pricingSteps{
+    background-color: white;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    width: 80%;
+    /* border: 1px solid ; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:2rem;
+  }
   .absoluteDiv>h1{
     font-size: 36px;
   }
@@ -456,8 +609,26 @@ font-family: 'Times New Roman', Times, serif;
         margin:0.3rem;
         margin-top: 0.3rem;
       }
+      .checkoutMainDiv{
+        border: 1px solid firebrick;
+        display: flex;
+        margin: 1rem;
+        flex-direction: column;
+      }
       .absoluteDiv>h1{
         font-size: 25px;
+      }
+      .pricingSteps{
+        background-color: white;
+        margin: auto;
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        width: 80%;
+        /* border: 1px solid ; */
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap:2rem;
       }
       .getCookiBtn{
         margin-top:0.7rem;

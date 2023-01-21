@@ -1,6 +1,6 @@
   import pic from "../images/bigBite(1).png";
   // import pic from "../images/bigBite.png";
-
+import { useNavigate } from "react-router-dom";
   import {
       Box,
       Flex,
@@ -50,12 +50,13 @@ import { Navigate } from "react-router-dom";
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const {logOut,isAuth}=useContext(AuthContext);
+    const nav=useNavigate();
     console.log("onNavbar",isAuth);
     useEffect(()=>{
       if(isAuth){
         return <Navigate to="/"/>
       }
-    },[])
+    },[isAuth])
     return (
       <Box>
         <Flex
@@ -82,12 +83,13 @@ import { Navigate } from "react-router-dom";
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Link href='/'>
+            <Link>
               <Text
                 textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                 fontFamily={'heading'}
                 color={useColorModeValue('gray.800', 'white')}>
                 <img src={pic} alt="logo" 
+                onClick={()=>nav('/')}
                 style={{width:'90px',height:'70px',padding:'0%',marginLeft:'0.7rem',border:'0px solid'}}/>
               </Text>
             </Link>
@@ -110,11 +112,11 @@ import { Navigate } from "react-router-dom";
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'/login'}>
+              onClick={()=>nav('/login')}>
               Log In
             </Button>
               }
-              <Link href={'/signup'}>
+              <Link onClick={()=>nav('/signup')}>
                 <Button
                   display={{ base: 'none', md: 'inline-flex' }}
                   fontSize={'sm'}
@@ -140,6 +142,7 @@ import { Navigate } from "react-router-dom";
   const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const nav=useNavigate();
   
     return (
       <Stack direction={'row'} spacing={4} mt={4}>
@@ -150,7 +153,7 @@ import { Navigate } from "react-router-dom";
                 <Link
                   p={2}
                   // border={'1px solid black'}
-                  href={navItem.href ?? '#'}
+                  onClick={()=>nav(navItem.href ?? '#')}
                   fontSize={'sm'}
                   fontWeight={400}
                   color={linkColor}
@@ -184,7 +187,7 @@ import { Navigate } from "react-router-dom";
   const MobileNavItem = (props) => {
     const {label, href }=props
     // const { isOpen, onToggle } = useDisclosure();
-  
+  const nav=useNavigate();
     return (
       <Stack spacing={4}
       //  onClick={onToggle}
@@ -192,7 +195,7 @@ import { Navigate } from "react-router-dom";
         <Flex
           py={2}
           as={Link}
-          href={href ?? '#'}
+          onClick={()=>nav(href ?? '#')}
           justify={'space-between'}
           align={'center'}
           _hover={{
