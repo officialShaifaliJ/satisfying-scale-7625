@@ -10,7 +10,8 @@ export default function Checkout(){
             <div className="deliveryForm">
                 <h1>Checkout</h1>
                 <p>You won’t be charged until your first order ships.</p>
-            {!ischeckout?( <form>
+            {!ischeckout?( 
+            <form>
                 <h2>Delivery Information</h2>
                     <div>
                     <label>FIRST NAME<br/>
@@ -58,7 +59,12 @@ export default function Checkout(){
                     <div>
                         <button className="submit" onClick={()=>{setCheckout(true)}}>CONTINUE TO BILLING</button>
                     </div>
-                </form>):(<h1>hi</h1>)}
+            </form>
+            ):(
+            <div>
+                <h1>Delivery Address</h1>
+            </div>
+            )}
             </div>
             <Order/>
         </div>
