@@ -25,8 +25,8 @@ import {
       
       const handleSubmit=async(e)=>{
           e.preventDefault();
-        //   const checkUserData=axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`);
-          const checkUserData = await axios.get(`http://localhost:8080/users`);
+          const checkUserData=axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`);
+          // const checkUserData = await axios.get(`http://localhost:8080/users`);
         //   console.log("checkUserData",checkUserData)
 
           let userIsHere=0;

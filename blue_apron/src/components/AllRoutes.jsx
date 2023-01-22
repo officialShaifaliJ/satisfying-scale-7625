@@ -11,7 +11,7 @@ const {isAuth}=useContext(AuthContext);
  return <Routes>
     <Route path="/" element={<Home/>}/>
     <Route path="/login" element={isAuth?(null):(<Login/>)}/>
-    <Route path="/on_the_menu" element={<OnTheMenu/>}/>
+    <Route path="/" element={<OnTheMenu/>}/>
     <Route path="/signup" element={<SignupCard/>}/>
     <Route path="/pricing" element={<Pricing/>}/>
  </Routes>

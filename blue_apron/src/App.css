@@ -316,7 +316,7 @@ font-family: 'Times New Roman', Times, serif;
   font-size: 14px;
   margin: 0.7rem;
 }
-.deliveryForm>form>div>label>input{
+.deliveryForm>form>div>label>input,.billingInfo>label>input{
   border: 1px solid grey;
   padding: 0.4rem 3rem 0.4rem 0.4rem;
   border-radius: 5px;
@@ -366,12 +366,50 @@ font-weight: 500;
   margin:0.8rem;
   justify-content: space-between;
 }
+.LastInfo{
+  border: 1px solid ;
+  border-radius: 5px;
+padding: 1rem;
+margin: 1rem;
+color: grey;
+}
+.billingInfo{
+  border: 1px solid;
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.headingDilevery>h1,.billingInfo>h1{
+  font-size: 25px;
+  color: black;
+  font-family: 'Times New Roman', Times, serif;
+}
+.headingDilevery>p{
+  color: black;
+}
+.headingDilevery>p:hover{
+  cursor: pointer;
+}
+.headingDilevery{
+  display: flex;
+  justify-content: space-between;
+
+  /* border: 1px solid; */
+}
 @media all and (min-width: 800px) and (max-width: 1075px) {
   .checkoutMainDiv{
     border: 1px solid firebrick;
     display: flex;
     margin: 1rem;
     flex-direction: column;
+  }
+  .deliveryForm>form>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* justify-content: space-between; */
+    gap: 2px;
+    /* border: 1px solid; */
   }
   .pricingSteps{
     background-color: white;
@@ -495,6 +533,13 @@ font-weight: 500;
     /* border: 1px solid black;  */
     margin-top: 6rem;
   }
+  .deliveryForm>form>div{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* justify-content: space-between; */
+    gap: 2px;
+    /* border: 1px solid; */
+  }
   .checkoutMainDiv{
     border: 1px solid firebrick;
     display: flex;
@@ -608,6 +653,13 @@ font-weight: 500;
         /* border: 1px solid black;  */
         margin:0.3rem;
         margin-top: 0.3rem;
+      }
+      .deliveryForm>form>div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        /* justify-content: space-between; */
+        gap: 2px;
+        /* border: 1px solid; */
       }
       .checkoutMainDiv{
         border: 1px solid firebrick;
