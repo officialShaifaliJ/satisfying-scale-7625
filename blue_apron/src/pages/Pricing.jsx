@@ -84,7 +84,7 @@ export default function Pricing(){
                     <p>Shipping</p>
                     <p>${price*num + shipping}</p>
                 </div>
-                <button className='continue' onClick={(e)=>{setStep12(!step12)}}>CONTINUE</button>
+                <button className='continue' onClick={()=>{setStep12(!step12)}}>CONTINUE</button>
                 <p>You can update your preferences
                 and skip, pause, or cancel at any time.*
                 Learn More
@@ -95,7 +95,7 @@ export default function Pricing(){
     </div>
     ):(
         !isAuth?(<Login/>):
-        (<Checkout/>)
+        (<Checkout server2={twoFour?2:4} mealper={meal?2:3}/>)
     )}
     <Footer/>
     </>)
