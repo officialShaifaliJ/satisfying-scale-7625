@@ -27,7 +27,7 @@ import { Navigate } from "react-router-dom";
   const NAV_ITEMS = [
     {
       label: 'ON THE MENU',
-      href : '/on_the_menu'
+      href : '/'
     },
     {
       label: 'PRICING',
@@ -35,15 +35,15 @@ import { Navigate } from "react-router-dom";
     },
     {
       label: 'WINE',
-      href:'/wine'
+      href:'/'
     },
     {
       label: 'GIFT',
-      href: '/gift',
+      href: '/',
     },
     {
       label: 'MARKET',
-      href: '/market',
+      href: '/',
     },
   ];
   
