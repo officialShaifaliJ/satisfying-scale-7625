@@ -25,7 +25,7 @@ import {
       
       const handleSubmit=async(e)=>{
           e.preventDefault();
-          const checkUserData=axios.get(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`);
+          const checkUserData=axios.get(`https://bigbite-xqp8.onrender.com/users`);
           // const checkUserData = await axios.get(`http://localhost:8080/users`);
         //   console.log("checkUserData",checkUserData)
 
@@ -50,7 +50,7 @@ import {
                 return
             }
         //   let resPost=await axios.post(`http://localhost:${process.env.REACT_APP_JSON_SERVER_PORT}/users`,userData);
-          let resPost=await axios.post(`http://localhost:8080/users`,userData);
+          let resPost=await axios.post(`https://bigbite-xqp8.onrender.com/users`,userData);
           alert("🎉 Hurray!⚛Sign Up Successfully 😃✔")
           console.log(resPost);
           window.location.href="/";

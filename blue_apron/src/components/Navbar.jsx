@@ -50,13 +50,17 @@ import { Navigate } from "react-router-dom";
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
     const {logOut,isAuth}=useContext(AuthContext);
-    const nav=useNavigate();
+    const nav = useNavigate();
     console.log("onNavbar",isAuth);
     useEffect(()=>{
       if(isAuth){
-        return <Navigate to="/"/>
+        return nav("/")
       }
-    },[isAuth])
+    },[isAuth]);
+    const handleLogout = () =>{
+      logOut();
+      nav("/login")
+    }
     return (
       <Box>
         <Flex
@@ -106,7 +110,7 @@ import { Navigate } from "react-router-dom";
             spacing={6}>
               {isAuth?(<>
               {/* <Navigate to="/"/>; */}
-              <Button onClick={logOut}>LogOut</Button></>):
+              <Button onClick={handleLogout}> LogOut</Button></>):
             <Button
               as={'a'}
               fontSize={'sm'}

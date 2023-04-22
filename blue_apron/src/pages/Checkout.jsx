@@ -2,7 +2,9 @@ import { AuthContext } from '../context/AuthContext';
 import { useContext ,useState} from 'react';
 import Order from './OrderSummary';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 export default function Checkout(props){
+    const nav=useNavigate()
     const {server2,mealper}=props;
     const {ischeckout,setCheckout}=useContext(AuthContext);
     const [firstN,setFirstN]=useState("Shaifali");
@@ -131,9 +133,12 @@ export default function Checkout(props){
                 <div className='billingInfo'>
                     <h1>Billing Information</h1>
                     <label>CARD NUMBER
-                        <input type="number" placeholder="1234 1234 1234 1234" value={cardLength} onChange={(e)=>{setcardNum(e.target.length)}} />
+                        <input type="number" placeholder="1234 1234 1234 1234"/>
                     </label>
-                    <button className="submit" onClick={()=>{alert("🎊🎉Hurray!Order is placed🥗🍽🥢")}}>Place order</button>
+                    <button className="submit" onClick={()=>{
+                        alert("🎊🎉Hurray!Order is placed🥗🍽🥢");
+                        nav("/");
+                        }}>Place order</button>
                 </div>
             </div>
             )}
