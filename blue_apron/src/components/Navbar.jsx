@@ -1,17 +1,6 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-//  export default function Navbar(){
-  //     return <div>
-  //         <Link to="/">
-  //             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Blue_Apron_logo.svg/132px-Blue_Apron_logo.svg.png?20220725161146"
-  //             width="80px" alt=""/>
-  //         </Link>
-  //         <Link to="/on-the-menu">On the menu</Link>
-  //         <Link to="/login">Login</Link>
-  //     </div>
-  //  }
-  import pic from "../images/bigBite.png";
-
+  import pic from "../images/bigBite(1).png";
+  // import pic from "../images/bigBite.png";
+import { useNavigate } from "react-router-dom";
   import {
       Box,
       Flex,
@@ -20,11 +9,9 @@
       Button,
       Stack,
       Collapse,
-      Icon,
       Link,
       Popover,
       PopoverTrigger,
-      PopoverContent,
       useColorModeValue,
       useBreakpointValue,
       useDisclosure,
@@ -32,21 +19,15 @@
     import {
       HamburgerIcon,
       CloseIcon,
-      ChevronDownIcon,
-      ChevronRightIcon,
     } from '@chakra-ui/icons';
+  import {AuthContext} from '../context/AuthContext'
+import { useContext,useEffect } from "react";
+import { Navigate } from "react-router-dom";
 
-  // const  NavItem ={
-  //   label: string,
-  //   subLabel?: string,
-  //   href?: string,
-  //   children?: Array<NavItem>
-  // }
-  
   const NAV_ITEMS = [
     {
       label: 'ON THE MENU',
-      href : '/on_the_menu'
+      href : '/'
     },
     {
       label: 'PRICING',
@@ -54,22 +35,32 @@
     },
     {
       label: 'WINE',
-      href:'/wine'
+      href:'/'
     },
     {
       label: 'GIFT',
-      href: '/gift',
+      href: '/',
     },
     {
       label: 'MARKET',
-      href: '/market',
+      href: '/',
     },
   ];
   
-  // import {NavLink} from '@chakra-ui/react'
   export default function WithSubnavigation() {
     const { isOpen, onToggle } = useDisclosure();
-  
+    const {logOut,isAuth}=useContext(AuthContext);
+    const nav = useNavigate();
+    console.log("onNavbar",isAuth);
+    useEffect(()=>{
+      if(isAuth){
+        return nav("/")
+      }
+    },[isAuth]);
+    const handleLogout = () =>{
+      logOut();
+      nav("/login")
+    }
     return (
       <Box>
         <Flex
@@ -96,13 +87,14 @@
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            <Link href='/'>
+            <Link>
               <Text
                 textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                 fontFamily={'heading'}
                 color={useColorModeValue('gray.800', 'white')}>
                 <img src={pic} alt="logo" 
-                style={{width:'65px',height:'60px',padding:'0%',marginLeft:'2rem',border:'0px solid'}}/>
+                onClick={()=>nav('/')}
+                style={{width:'90px',height:'70px',padding:'0%',marginLeft:'0.7rem',border:'0px solid'}}/>
               </Text>
             </Link>
   
@@ -116,23 +108,27 @@
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
+              {isAuth?(<>
+              {/* <Navigate to="/"/>; */}
+              <Button onClick={handleLogout}> LogOut</Button></>):
             <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
-              href={'/login'}>
+              onClick={()=>nav('/login')}>
               Log In
             </Button>
-              <Link href={'/pricing'}>
+              }
+              <Link onClick={()=>nav('/signup')}>
                 <Button
                   display={{ base: 'none', md: 'inline-flex' }}
                   fontSize={'sm'}
                   fontWeight={600}
                   color={'white'}
-                  bg={'orange.400'}
+                  bg={'orange.500'}
                   _hover={{
-                    bg: 'orange.300',
+                    bg: 'orange.400',
                   }}>
                   Sign Up
                 </Button>
@@ -150,6 +146,7 @@
   const DesktopNav = () => {
     const linkColor = useColorModeValue('gray.600', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
+    const nav=useNavigate();
   
     return (
       <Stack direction={'row'} spacing={4} mt={4}>
@@ -160,7 +157,7 @@
                 <Link
                   p={2}
                   // border={'1px solid black'}
-                  href={navItem.href ?? '#'}
+                  onClick={()=>nav(navItem.href ?? '#')}
                   fontSize={'sm'}
                   fontWeight={400}
                   color={linkColor}
@@ -194,7 +191,7 @@
   const MobileNavItem = (props) => {
     const {label, href }=props
     // const { isOpen, onToggle } = useDisclosure();
-  
+  const nav=useNavigate();
     return (
       <Stack spacing={4}
       //  onClick={onToggle}
@@ -202,7 +199,7 @@
         <Flex
           py={2}
           as={Link}
-          href={href ?? '#'}
+          onClick={()=>nav(href ?? '#')}
           justify={'space-between'}
           align={'center'}
           _hover={{
