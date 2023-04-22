@@ -17,3 +17,9 @@ This website is inspired by "Blue Apron".
 - Used Chakra ui template in login/signup page.
 - Used axios to fetch users datafrom json server
 
+## Tech stack
+
+- HTML
+- CSS
+- Javascript
+- React
