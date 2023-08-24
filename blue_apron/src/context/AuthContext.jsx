@@ -9,7 +9,7 @@ const [ischeckout,setCheckout]=useState(false);
 const login = (token,isAuth) =>{
     setAuth(true);
     setToken(token);
-    console.log(token,isAuth)
+    console.log( token,isAuth)
 }
 
 const logOut =()=>{

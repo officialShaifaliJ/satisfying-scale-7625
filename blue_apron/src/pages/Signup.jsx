@@ -25,10 +25,10 @@ import {
       
       const handleSubmit=async(e)=>{
           e.preventDefault();
-          const checkUserData=axios.get(`https://bigbite-xqp8.onrender.com/users`);
+          const checkUserData=await axios.get(`https://bigbite-xqp8.onrender.com/users`);
           // const checkUserData = await axios.get(`http://localhost:8080/users`);
-        //   console.log("checkUserData",checkUserData)
-
+          // checkUserData=checkUserData.json();
+          console.log("checkUserData",checkUserData.data)
           let userIsHere=0;
           const userData={"name":name,"email":email,"password":password};
 

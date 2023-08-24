@@ -38,7 +38,8 @@ import { AuthContext } from '../context/AuthContext';
                 isAuth=true;
                 token=id;
                 setAuth(true);
-                setToken(token)
+                setToken(token);
+                localStorage.setItem("bigBiteUser",JSON.stringify({email,name:el.name,password}))
                 login(token,isAuth);
                 console.log(isAuth)
             }
